@@ -5,9 +5,13 @@ from string import ascii_uppercase
 
 def choose_word_list(word_type):
     word_list = tuple()
-    if word_type.upper() == 'COUNTRIES' or word_type == '2':
+    if word_type.upper() == 'COUNTRIES' or word_type == '1':
         word_list = tuple(open('countries.txt').read().split('\n'))
-    elif word_type.upper() == 'EXIT' or word_type == '3':
+    elif word_type.upper() == 'ANIMALS' or word_type == '2':
+        word_list = tuple(open('animals.txt').read().split('\n'))
+    elif word_type.upper() == 'FOOD' or word_type == '3':
+        word_list = tuple(open('food.txt').read().split('\n'))
+    elif word_type.upper() == 'EXIT' or word_type == '4':
         exit()
     else:
         print('No such option')
@@ -16,7 +20,7 @@ def choose_word_list(word_type):
 
 def choosing_word(words):
     while not words:
-        words: tuple = choose_word_list(input('What type of word?\n  1) food\n  2) countries\n  3) exit\n'))
+        words: tuple = choose_word_list(input('What type of word?\n 1) countries\n 2) animals\n 3) food\n 4) exit\n'))
     selected_word = random.choice(words)
     return selected_word
 
@@ -61,7 +65,7 @@ def game_start(words_list):
         print("You've lost!")
 
 
-your_words_list = choose_word_list(input('What type of word?\n  1) food\n  2) countries\n  3) exit\n'))
+your_words_list = choose_word_list(input('What type of word?\n 1) countries\n 2) animals\n 3) food\n 4) exit\n'))
 while True:
     game_start(your_words_list)
     to_exit = input('Wanna play again?\n  1) yes\n  2) no\n')
