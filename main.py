@@ -38,7 +38,7 @@ alphabet = tuple(ascii_uppercase)
 def game_start(words_list):
     our_word = choosing_word(words_list)
     letter_list = tuple(our_word)
-    print(letter_list)
+    # print(letter_list)
     lower_list = list(our_word.lower())
     showing_list = list('#' * len(letter_list))
     showing_alphabet = list(alphabet)
